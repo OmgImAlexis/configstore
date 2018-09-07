@@ -19,7 +19,7 @@ class Configstore {
 			path.join(id, 'config.json') :
 			path.join('configstore', `${id}.json`);
 
-		this.path = options.configPath || path.join(configDir, pathPrefix);
+		this.path = options.configPath || path.join(options.configDir || configDir, options.configDir ? `${id}.json` : pathPrefix);
 
 		if (defaults) {
 			this.all = Object.assign({}, defaults, this.all);

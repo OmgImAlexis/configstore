@@ -79,6 +79,15 @@ Default: Automatic
 
 Set the path of the config file. Overrides the `packageName` and `globalConfigPath` options.
 
+##### configDir
+
+Type: `string`<br>
+Default: Automatic
+
+**Please don't use this option unless absolutely necessary and you know what you're doing.**
+
+Set the directory of the config file.
+
 ### Instance
 
 You can use [dot-notation](https://github.com/sindresorhus/dot-prop) in a `key` to access nested properties.

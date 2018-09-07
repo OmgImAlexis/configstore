@@ -123,6 +123,13 @@ test('support `configPath` option', t => {
 	t.true(regex.test(conf.path));
 });
 
+test('support `configDir` option', t => {
+	const customDir = path.join(os.tmpdir(), 'configstore-custom-dir');
+	const conf = new Configstore('foo', {}, {configDir: customDir});
+	const regex = /configstore-custom-dir(\/|\\)foo.json$/;
+	t.true(regex.test(conf.path));
+});
+
 test('ensure `.all` is always an object', t => {
 	cleanUpFile();
 	t.notThrows(() => t.context.conf.get('foo'));
